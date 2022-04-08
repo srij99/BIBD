@@ -1,0 +1,7 @@
+my.corpus <- Corpus(DirSource("/cloud/project/r-corpus"))
+my.corpus <- tm_map(my.corpus,removeWords,stopwords("english"))
+my.tdm <- TermDocumentMatrix(my.corpus)
+inspect(my.tdm)
+my.df <- as.data.frame(inspect(my.tdm))
+barplot(as.matrix(my.tdm))
+barplot(as.matrix(my.tdm), col=c("red", "green", "blue"))
